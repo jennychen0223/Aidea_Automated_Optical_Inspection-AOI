@@ -1,61 +1,46 @@
-# 
+# AOI瑕疵檢測
 ## 專案介紹
 
-1. 本專案目的為藉由分類模型訓練預測銀行對信用卡有興趣的潛在客戶，專案利用Python做資料探勘、數據分析、建立模型與效益評估。實作結果顯示，嘗試過Logistic Regression, Decision Tree Classifier, Random Forest Classifier, XGBoost, KNN等模型，最終以XGBoost模型準確率達到90.05%為最優。
-2. 將最終模型利用LINE Bot串接API，部署至Heroku形成實際上可使用的平台
+自動光學檢查（Automated Optical Inspection，簡稱 AOI），為高速高精度光學影像檢測系統，運用機器視覺做為檢測標準技術，可改良傳統上以人力使用光學儀器進行檢測的缺點，應用層面包括從高科技產業之研發、製造品管，以至國防、民生、醫療、環保、電力…等領域。由工研院電光所提供的 AOI 影像資料，來判讀瑕疵的分類，藉以提升透過數據科學來加強 AOI 判讀之效能。
+
+## 成果
+
+<img width="1138" alt="image" src="https://user-images.githubusercontent.com/81677812/128551705-5e83636c-840b-46fe-a264-9528a417026b.png">
 
 ## 資料來源
 
-本次資料是利用Kaggle平台釋出作為開放性議題，提供參賽者建立分類模型進行預測。
-（JOB-A-THON - May 2021- Credit Card Lead Prediction）
+本次資料是利用Aidea平台釋出作為開放性議題，提供參賽者建立分類模型進行預測。
 
-資料來源：https://www.kaggle.com/sajidhussain3/jobathon-may-2021-credit-card-lead-prediction?select=sample_submission.csv
+資料來源：https://aidea-web.tw/topic/285ef3be-44eb-43dd-85cc-f0388bf85ea4
 
 ## 專案步驟：
 
 - 了解資料
 - 資料前處理
-- 資料比較
 - 建立模型
-- 模型評估
-- LINE Bot實現
 
 ## 了解資料
 
-1. 訓練資料：245,725筆、11個欄位
-2. 測試資料：105,312筆、10個欄位
-<img width="749" alt="image" src="https://user-images.githubusercontent.com/81677812/128292795-1c32abc7-bcbd-4b3a-a69b-f5fb6cdc55a8.png">
+1. 訓練資料：2,528張、2個欄位
+3. 測試資料：10,142張、2個欄位
+4. Label：瑕疵分類類別（0、1、2、3、4、5）
 
 ## 資料前處理
 
-1. 處理空值：刪除空值欄位效果較好
-2. 類別型資料：利用Label Encoder轉換成數值資料
-3. 數值型資料：分佈較離散，進行標準化
-4. Age欄位：偏左分佈，故取Log使資料分布呈常態分佈
+1. 拆分Train資料：將圖片依7 : 1.5 : 1.5的比例分配至Train、Test、Valid三個資料夾內，並且按照圖片的分類放置0、1、2、3、4、5的資料夾內
+2. 生成資料：爲增加圖片進行訓練，利用ImageDataGenerator方法，將圖片縮放、旋轉、平移等產生新的圖片
 
-## 資料比較
 
-1. 數據樣本中，因目標正、負資料比例分佈不平均，正：76.3%、負：23.7%，故採SMOTE方法在少數類樣本之間，利用差值來產生額外的樣本。
-2. 利用特徵值比較，刪除關聯性較低欄位
-3. 拆分訓練資料80%、測試資料20%
+## 建立模型
+本專案我利用VGG-16當base model訓練，準確率達90.9%，在Aidea其他參賽者有達到更好成績，之後想再嘗試其他CNN模型架構：LeNet、AlexNet、VGG、GoogleLeNet、ResNet。
+### VGG-16簡介
+VGG 是英國牛津大學 Visual Geometry Group 的縮寫，主要貢獻是使用更多的隱藏層，大量的圖片訓練，提高準確率至90%。VGG16/VGG19分別為16層(13個卷積層及3個全連接層)與19層(16個卷積層及3個全連接層)，結構為：
+- 13層卷積層(convX-XXX)，第一個數字為卷積核大小，第二個數字為卷積層通道數
+- 3層全連接層(FC-XXXX)
+- 5層最大池化層(maxpool)
+- 卷積層與全連接層具有權重係數，因此也被稱為權重層，總數目為13+3=16，這即是VGG16中16的來源。
 
-## 模型評估
-
-|         模型結構          |  準確率 |
-| -------------------------|--------| 
-|    Logistic Regression   | 85.04% |
-| Decision Tree Classifier | 86.59% |
-| Random Forest Classifier | 88.93% |
-|          XGBoost         | 90.05% |
-|          Lightgbm        | 88.63% |
-|            KNN           | 84.69% |
-|            DNN           | 86.00% |
-
-## LINE Bot實現
-1. 建立聊天機器人，使用者依照機器人的指令，回傳客戶資料，最終會回傳預測結果
-2. 優點：使用便利、快速回覆、可立即根據結果做相對應的處理
-
-<img width="347" alt="image" src="https://user-images.githubusercontent.com/81677812/128297963-bb8d6dc5-05b1-4990-beb9-788243c86ab3.png">
-<img width="341" alt="image" src="https://user-images.githubusercontent.com/81677812/128297888-e221daba-e9c8-4c03-9385-032177c85b61.png">
+<img width="678" alt="image" src="https://user-images.githubusercontent.com/81677812/128550735-84eab772-df2f-43ed-9b30-74b09877b486.png">
+(圖片來源：https://www.researchgate.net/figure/The-flow-of-the-classification-and-visualization-in-the-VGG-16-DCNN-model-The-class-of-a_fig1_338770849)
 
 

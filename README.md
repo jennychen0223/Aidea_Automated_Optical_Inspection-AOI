@@ -30,9 +30,9 @@
 1. 拆分Train資料：將圖片依7 : 1.5 : 1.5的比例分配至Train、Test、Valid三個資料夾內，並且按照圖片的分類放置0、1、2、3、4、5的資料夾內
 2. 生成資料：爲增加圖片進行訓練，利用ImageDataGenerator方法，將圖片縮放、旋轉、平移等產生新的圖片
 
-
 ## 建立模型
-本專案我利用VGG-16當base model訓練，準確率達90.9%，在Aidea其他參賽者有達到更好成績，之後想再嘗試其他CNN模型架構：LeNet、AlexNet、VGG、GoogleLeNet、ResNet。
+本專案我利用VGG-16當base model訓練，最後三層卷積層自己增加，準確率達90.9%
+
 ### VGG-16簡介
 VGG 是英國牛津大學 Visual Geometry Group 的縮寫，主要貢獻是使用更多的隱藏層，大量的圖片訓練，提高準確率至90%。VGG16/VGG19分別為16層(13個卷積層及3個全連接層)與19層(16個卷積層及3個全連接層)，結構為：
 - 13層卷積層(convX-XXX)，第一個數字為卷積核大小，第二個數字為卷積層通道數
@@ -43,4 +43,8 @@ VGG 是英國牛津大學 Visual Geometry Group 的縮寫，主要貢獻是使�
 <img width="678" alt="image" src="https://user-images.githubusercontent.com/81677812/128550735-84eab772-df2f-43ed-9b30-74b09877b486.png">
 (圖片來源：https://www.researchgate.net/figure/The-flow-of-the-classification-and-visualization-in-the-VGG-16-DCNN-model-The-class-of-a_fig1_338770849)
 
+### 繼續探討
+後續想再試試其他CNN模型架構：VGG-19、LeNet、AlexNet、VGG、GoogleLeNet、ResNet。
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/81677812/128622597-2bebec61-cc6f-437e-9ce2-f1df81e855fb.png">
 
+(圖片來源：http://p.migdal.pl/2017/04/30/teaching-deep-learning.html)

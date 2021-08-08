@@ -44,7 +44,7 @@ VGG 是英國牛津大學 Visual Geometry Group 的縮寫，主要貢獻是使�
 (圖片來源：https://www.researchgate.net/figure/The-flow-of-the-classification-and-visualization-in-the-VGG-16-DCNN-model-The-class-of-a_fig1_338770849)
 
 ### 繼續探討
-後續想再試試其他CNN模型架構：VGG-19、LeNet、AlexNet、VGG、GoogleLeNet、ResNet。
+後續想再試試其他CNN模型架構：VGG-19、LeNet、AlexNet、VGG、GoogleLeNet、ResNet，探索其不同差異性。
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/81677812/128622597-2bebec61-cc6f-437e-9ce2-f1df81e855fb.png">
 
 (圖片來源：http://p.migdal.pl/2017/04/30/teaching-deep-learning.html)

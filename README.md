@@ -14,19 +14,22 @@
 - 了解資料
 - 資料處理
 - 模型評估
+- 模型簡介
+- 未來探討
 
 ## 了解資料
 
-1. 訓練資料：2,528張、2個欄位
-3. 測試資料：10,142張、2個欄位
-4. Label：瑕疵分類類別（0、1、2、3、4、5）
+1. 訓練資料：2,528張
+3. 測試資料：10,142張
+4. Label：6個類別(正常類別 + 5種瑕疵類別)
+5. 影像尺寸：512x512
 
 <img width="387" alt="截圖 2021-08-11 上午9 40" src="https://user-images.githubusercontent.com/81677812/129036800-9e3bfe0c-d796-4651-b75a-215e3f7abcf8.png">
 
 ## 資料處理
 
 1. 拆分Train資料：將圖片依7 : 1.5 : 1.5的比例分配至Train、Test、Valid三個資料夾內，並且按照圖片的分類放置0、1、2、3、4、5的資料夾內
-2. 生成資料：利用ImageDataGenerator方法，將圖片縮放、旋轉、平移等增強訓練資料
+2. 生成資料：利用ImageDataGenerator方法，將圖片縮放、旋轉、翻轉等增強訓練資料
 
 ## 模型評估
 
@@ -81,7 +84,7 @@ VGG是由牛津大學計算機視覺組Visual Geometry Group提出(這也是VGG�
 - 訓練時間過長，難以調整參數
 <img width="678" alt="image" src="https://user-images.githubusercontent.com/81677812/128550735-84eab772-df2f-43ed-9b30-74b09877b486.png">
 
-### 繼續探討
+## 未來探討
 後續想再試試其他CNN模型架構：LeNet、AlexNet、GoogleLeNet、探討其不同差異性。
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/81677812/128622597-2bebec61-cc6f-437e-9ce2-f1df81e855fb.png">
 

@@ -52,8 +52,8 @@
 
 - ResNet50訓練過程
 
-<img width="390" alt="image" src="https://user-images.githubusercontent.com/81677812/129052272-1d615caa-a943-4573-b051-d6ad394a00c7.png">
-<img width="398" alt="image" src="https://user-images.githubusercontent.com/81677812/129052346-e81ed9ae-ebcd-41f8-9c2c-a4e54eeaaae7.png">
+<img width="409" alt="image" src="https://user-images.githubusercontent.com/81677812/129149808-a431b669-85c8-422c-99e9-f97e69bb8082.png">
+<img width="415" alt="image" src="https://user-images.githubusercontent.com/81677812/129149771-7f96379b-1d4d-4911-8eea-6c6201b8f95d.png">
 
 ## 模型簡介
 ### DenseNet121

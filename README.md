@@ -83,7 +83,7 @@ VGG是由牛津大學計算機視覺組Visual Geometry Group提出(這也是VGG�
 - 證明較深的層數能提高效能
 - 參數量龐大，計算資源需求高
 - 訓練時間過長，難以調整參數
-- 
+
 <img width="678" alt="image" src="https://user-images.githubusercontent.com/81677812/128550735-84eab772-df2f-43ed-9b30-74b09877b486.png">
 
 ## 未來探討

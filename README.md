@@ -68,6 +68,7 @@
 
 ### ResNet50(Residual Neural Network)
 又稱殘差神經網路，在2015年被提出，在ImageNet比賽classification任務上獲得第一名，因爲它“簡單與實用”並存。在適當的深度模型中添加更多層會導致更高的訓練錯誤，利用跳過某些層的快捷方式，使用額外的權重矩陣來學習跳躍權重，解決了“隨着網絡加深，準確率下降”的問題。
+
 <img width="242" alt="image" src="https://user-images.githubusercontent.com/81677812/129045888-389307c7-4621-4431-97f9-dfda40179629.png">
 
 ### VGG-16(Visual Geometry Group)
@@ -82,10 +83,12 @@ VGG是由牛津大學計算機視覺組Visual Geometry Group提出(這也是VGG�
 - 證明較深的層數能提高效能
 - 參數量龐大，計算資源需求高
 - 訓練時間過長，難以調整參數
+- 
 <img width="678" alt="image" src="https://user-images.githubusercontent.com/81677812/128550735-84eab772-df2f-43ed-9b30-74b09877b486.png">
 
 ## 未來探討
 後續想再試試其他CNN模型架構：LeNet、AlexNet、GoogleLeNet、探討其不同差異性。
+
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/81677812/128622597-2bebec61-cc6f-437e-9ce2-f1df81e855fb.png">
 
 (圖片來源：http://p.migdal.pl/2017/04/30/teaching-deep-learning.html)

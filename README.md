@@ -87,7 +87,7 @@ VGG是由牛津大學計算機視覺組Visual Geometry Group提出(這也是VGG�
 <img width="678" alt="image" src="https://user-images.githubusercontent.com/81677812/128550735-84eab772-df2f-43ed-9b30-74b09877b486.png">
 
 ## 未來探討
-後續想再試試其他CNN模型架構：LeNet、AlexNet、GoogleLeNet、探討其不同差異性。。
+後續想再試試其他CNN模型架構：LeNet、AlexNet、GoogleLeNet、探討其不同差異性。
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/81677812/128622597-2bebec61-cc6f-437e-9ce2-f1df81e855fb.png">
 
